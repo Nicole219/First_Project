@@ -24,6 +24,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Выйти"/>
+                                    <connections>
+                                        <action selector="onSignOutTapped:" destination="HvI-yP-v4i" eventType="touchUpInside" id="klX-1S-qND"/>
+                                    </connections>
                                 </button>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gkz-8h-cVE">
@@ -55,6 +58,7 @@
                     <connections>
                         <outlet property="lable" destination="Gkz-8h-cVE" id="bnY-Is-MHO"/>
                         <outlet property="tableView" destination="xbQ-ZN-NeX" id="a0X-Ub-r5x"/>
+                        <segue destination="O65-dF-qbc" kind="show" identifier="signoutSegue" id="OGm-jF-uE4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4CD-KP-EKx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -164,7 +168,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Войдите или зарегистрируйтесь" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydr-lo-v5M">
-                                <rect key="frame" x="20" y="48" width="335" height="40"/>
+                                <rect key="frame" x="20" y="92" width="335" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="fxA-Rn-Gqz"/>
                                 </constraints>

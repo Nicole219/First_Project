@@ -12,15 +12,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var lable: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
-   /*@IBAction func onSignOutTapped(_ sender: Any) {
+   @IBAction func onSignOutTapped(_ sender: Any) {
        do {
            try Auth.auth().signOut()
-            performSegue(withIdentifier: "signoutSegue", sender: nil)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "UIViewController-O65-dF-qbc") as UIViewController
+        self.present(vc, animated: true, completion: nil)
+           // performSegue(withIdentifier: "signoutSegue", sender: nil)
         } catch {
             print(error)
         }
-    }*/
-    
+    }
     
     
     
