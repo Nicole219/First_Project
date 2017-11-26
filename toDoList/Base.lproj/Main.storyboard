@@ -112,7 +112,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="введите логин" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Uq-uG-Tfu">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="введите почту" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Uq-uG-Tfu">
                                 <rect key="frame" x="110" y="124" width="154" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -160,7 +160,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="O65-dF-qbc" eventType="touchUpInside" id="HQP-YP-i4s"/>
-                                    <segue destination="HvI-yP-v4i" kind="show" id="dPY-1t-IY2"/>
+                                    <segue destination="PQg-h8-2eY" kind="show" id="ZCC-vt-0rR"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Войдите или зарегистрируйтесь" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydr-lo-v5M">
@@ -234,7 +234,4 @@
             <point key="canvasLocation" x="-312" y="472"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="53B-AM-Pp2"/>
-    </inferredMetricsTieBreakers>
 </document>

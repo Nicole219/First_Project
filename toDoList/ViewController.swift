@@ -12,7 +12,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var lable: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
-/*   @IBAction func onSignOutTapped(_ sender: Any) {
+   /*@IBAction func onSignOutTapped(_ sender: Any) {
        do {
            try Auth.auth().signOut()
             performSegue(withIdentifier: "signoutSegue", sender: nil)
