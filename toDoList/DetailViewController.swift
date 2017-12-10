@@ -14,12 +14,16 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var noteDetail: UITextView!
     
+    @IBOutlet weak var imageDetail: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let task = tasks[currentTaskIndex]
         taskNameDetail.text = task.name!
         noteDetail.text = task.note!
+        if noteImage != nil{
+            imageDetail.image = noteImage
+        }
     
     }
 
@@ -33,7 +37,6 @@ class DetailViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 

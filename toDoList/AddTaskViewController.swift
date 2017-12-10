@@ -8,7 +8,9 @@
 
 import UIKit
 
-class AddTaskViewController: UIViewController {
+var noteImage :UIImage? = nil
+
+class AddTaskViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     @IBOutlet weak var noteTextView: UITextView!
     @IBOutlet weak var taskTextField: UITextField!
@@ -24,6 +26,28 @@ class AddTaskViewController: UIViewController {
         }*/
         
         navigationController!.popViewController(animated: true)
+    }
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBAction func addImageView(_ sender: Any) {
+        let image = UIImagePickerController()
+        image.delegate = self
+        image.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        image.allowsEditing = false
+        self.present(image, animated: true){
+            
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imageView.image = image
+            noteImage = image
+        }
+        else{
+            print("error")
+        }
+        self.dismiss(animated: true, completion: nil)
     }
     
     
