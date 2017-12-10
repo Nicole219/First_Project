@@ -13,6 +13,7 @@ class AlertController {
         let alert = UIAlertController(title: title, message: messege, preferredStyle: .alert)
         let action = UIAlertAction (title: "OK", style: .default, handler: nil)
         alert.addAction(action)
-        inVewController.present(alert, animated: true, completion: nil)
+     inVewController.present(alert, animated: true, completion: nil)
+        
     }
 }

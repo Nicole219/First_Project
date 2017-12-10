@@ -30,14 +30,19 @@ class LoginViewController: UIViewController , GIDSignInUIDelegate{
         }
         Auth.auth().signIn(withEmail: email, password: password, completion: {(user, error) in
             guard error == nil else {
-                AlertController.showAlert(self, title: "Ошибка", messege: error!.localizedDescription)
+                  print("Все плохо");
+            AlertController.showAlert(self, title: "Ошибка", messege: error!.localizedDescription)
                 return
             }
             guard let user = user else {return}
             print(user.email ?? "missing EMAIL")
             print(user.displayName ?? "missing DISPLAY NAME")
             print(user.uid)
-           // self.performSegue(withIdentifier: "signinSegue", sender: nil)
+            print("okey")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "Navigation") as UIViewController
+            self.present(vc, animated: true, completion: nil)
+            //self.performSegue(withIdentifier: "signinSegue", sender: nil)
         })
         
       /*  let usr = "qwerty"

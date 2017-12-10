@@ -20,6 +20,7 @@
 		C478FBC71FAE871D00A6910E /* toDoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C478FBC61FAE871D00A6910E /* toDoListTests.swift */; };
 		C478FBD21FAE871D00A6910E /* toDoListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C478FBD11FAE871D00A6910E /* toDoListUITests.swift */; };
 		C478FBE01FAE887200A6910E /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C478FBDF1FAE887200A6910E /* AddTaskViewController.swift */; };
+		C48F5A671FD17EB900446DB5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F5A661FD17EB900446DB5 /* DetailViewController.swift */; };
 		C49349791FAEFB08005BB5E8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49349781FAEFB08005BB5E8 /* LoginViewController.swift */; };
 		C493497C1FAEFF90005BB5E8 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C493497A1FAEFF8F005BB5E8 /* Register.storyboard */; };
 		C493497E1FAEFFCA005BB5E8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C493497D1FAEFFCA005BB5E8 /* RegisterViewController.swift */; };
@@ -71,6 +72,7 @@
 		C478FBD11FAE871D00A6910E /* toDoListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toDoListUITests.swift; sourceTree = "<group>"; };
 		C478FBD31FAE871D00A6910E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C478FBDF1FAE887200A6910E /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		C48F5A661FD17EB900446DB5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C49349721FAEED2F005BB5E8 /* pattern.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pattern.jpg; sourceTree = "<group>"; };
 		C49349781FAEFB08005BB5E8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C493497B1FAEFF8F005BB5E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = toDoList/Base.lproj/Register.storyboard; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				C46E2BD21FB6E8C7006544CD /* RoundButton.swift */,
 				C4951D741FC87D81004DDCB9 /* head.m */,
 				C4951D731FC87D81004DDCB9 /* toDoList-Bridging-Header.h */,
+				C48F5A661FD17EB900446DB5 /* DetailViewController.swift */,
 			);
 			path = toDoList;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				C4951D751FC87D81004DDCB9 /* head.m in Sources */,
 				C478FBB71FAE871D00A6910E /* toDoList.xcdatamodeld in Sources */,
 				C493497E1FAEFFCA005BB5E8 /* RegisterViewController.swift in Sources */,
+				C48F5A671FD17EB900446DB5 /* DetailViewController.swift in Sources */,
 				C49349791FAEFB08005BB5E8 /* LoginViewController.swift in Sources */,
 				C478FBAF1FAE871D00A6910E /* AppDelegate.swift in Sources */,
 			);

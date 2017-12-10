@@ -8,6 +8,10 @@
 
 import UIKit
 import Firebase
+
+var tasks: [Task] = []
+var currentTaskIndex: Int = -1
+
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var lable: UILabel!
     
@@ -18,16 +22,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "UIViewController-O65-dF-qbc") as UIViewController
+        //let vc = storyboard.instantiateViewController(withIdentifier: "UIViewController-O65-dF-qbc") as UIViewController
         self.present(vc, animated: true, completion: nil)
-           // performSegue(withIdentifier: "signoutSegue", sender: nil)
+           //performSegue(withIdentifier: "signoutSegue", sender: nil)
         } catch {
             print(error)
         }
     }
     
     
-    
-    var tasks: [Task] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +57,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
 
     func getdata()
@@ -84,6 +87,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         tableView.reloadData()
         }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        currentTaskIndex = indexPath.row
+        performSegue(withIdentifier: "detailSegue", sender: nil)
+    }
     
 }
 
