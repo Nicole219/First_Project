@@ -12,6 +12,7 @@ target 'toDoList' do
 	pod ‘FirebaseCore’
 	pod ‘FirebaseAuth’
 	pod ‘Firebase’
+	pod ‘KeychainSwift’
 	pod ‘FirebaseDatabase’
 	pod ‘GoogleSignIn’
 

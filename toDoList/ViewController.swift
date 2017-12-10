@@ -22,12 +22,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "UIViewController-O65-dF-qbc") as UIViewController
-        //let vc = storyboard.instantiateViewController(withIdentifier: "UIViewController-O65-dF-qbc") as UIViewController
         self.present(vc, animated: true, completion: nil)
-           //performSegue(withIdentifier: "signoutSegue", sender: nil)
         } catch {
             print(error)
         }
+    DataService().keyChain.delete("uid")
+    
     }
     
     

@@ -18,6 +18,20 @@ class LoginViewController: UIViewController , GIDSignInUIDelegate{
    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var pswdTextField: UITextField!
+    
+    func repeatSignIn(id: String){
+        let keyChain = DataService().keyChain
+        keyChain.set(id , forKey: "uid")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let keyChain = DataService().keyChain
+        if keyChain.get("uid") != nil {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "Navigation") as UIViewController
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
     @IBAction func loginButtonTapped(_ sender: Any) {
         print("Login button is tapped");
         guard let email = nameTextField.text,
@@ -29,35 +43,29 @@ class LoginViewController: UIViewController , GIDSignInUIDelegate{
                 return
         }
         Auth.auth().signIn(withEmail: email, password: password, completion: {(user, error) in
-            guard error == nil else {
-                  print("Все плохо");
+            if error == nil {self.repeatSignIn(id: user!.uid)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "Navigation") as UIViewController
+                self.present(vc, animated: true, completion: nil)
+            }
+            else {
+                  //print("Все плохо");
             AlertController.showAlert(self, title: "Ошибка", messege: error!.localizedDescription)
                 return
-            }
+       
+                    }
             guard let user = user else {return}
             print(user.email ?? "missing EMAIL")
             print(user.displayName ?? "missing DISPLAY NAME")
             print(user.uid)
-            print("okey")
+           // print("okey")
+            self.repeatSignIn(id: user.uid)
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "Navigation") as UIViewController
             self.present(vc, animated: true, completion: nil)
-            //self.performSegue(withIdentifier: "signinSegue", sender: nil)
+            
         })
-        
-      /*  let usr = "qwerty"
-        let pswd = "123"
-        if nameTextField.text == usr &&
-            pswdTextField.text == pswd
-        {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "Navigation") as UIViewController
-            self.present(vc, animated: true, completion: nil)
-        }
-        else {
-            titleLabel.text = "Неверный логин или пароль"
-            titleLabel.backgroundColor = UIColor.red
-        }*/
+      
     }
  
     override func viewDidLoad() {
@@ -78,20 +86,12 @@ class LoginViewController: UIViewController , GIDSignInUIDelegate{
         // ...
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }
