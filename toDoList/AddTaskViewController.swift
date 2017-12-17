@@ -20,10 +20,7 @@ class AddTaskViewController: UIViewController, UINavigationControllerDelegate, U
         task.name = taskTextField.text!
         task.note = noteTextView.text!
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
-        /*if (taskTextField.text?.isEmpty)!{
-            AlertController.showAlert(self, title: "Ошибка", messege: "Пожалуйста, заполните все необходимые поля")
-            return
-        }*/
+       
         
         navigationController!.popViewController(animated: true)
     }

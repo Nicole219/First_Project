@@ -27,13 +27,45 @@ class DetailViewController: UIViewController {
     
     }
 
-   /* override func viewWillDisappear(_ animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         let task = tasks[currentTaskIndex]
-        if taskNameDetail.text != task.name!{
-            
+       if ((taskNameDetail.text) != task.name!){
+        print(currentTaskIndex)
+            print(taskNameDetail.text!)
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            let task = tasks[currentTaskIndex]
+            task.name = taskNameDetail.text!
+            //task.note = noteDetail.text!
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+            do{
+                tasks=try context.fetch(Task.fetchRequest())
+            }
+            catch{
+                print("fetch fail");
+            }
         }
-    }*/
+        
+        if ((noteDetail.text) != task.note!){
+            print(currentTaskIndex)
+            print(noteDetail.text!)
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            let task = tasks[currentTaskIndex]
+            task.note = noteDetail.text!
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            
+            do{
+                tasks=try context.fetch(Task.fetchRequest())
+            }
+            catch{
+                print("fetch fail");
+            }
+        }
+        
+        navigationController!.popViewController(animated: true)
+        
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
