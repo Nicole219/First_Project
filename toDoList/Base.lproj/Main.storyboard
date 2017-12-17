@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -87,22 +88,25 @@
                                     <action selector="saveButtonTapped:" destination="pDb-8W-OhH" eventType="touchUpInside" id="XP3-J2-fOl"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xs9-jG-At8">
-                                <rect key="frame" x="30" y="167" width="315" height="128"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xs9-jG-At8">
+                                <rect key="frame" x="30" y="171" width="315" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Xs9-jG-At8" secondAttribute="height" multiplier="315:128" id="c1y-G6-r2O"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fm0-H6-ODt">
-                                <rect key="frame" x="30" y="318" width="315" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fm0-H6-ODt">
+                                <rect key="frame" x="30" y="314" width="315" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Добавить картинку"/>
                                 <connections>
                                     <action selector="addImageView:" destination="pDb-8W-OhH" eventType="touchUpInside" id="xV4-mY-M9k"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="57a-wU-OfI">
-                                <rect key="frame" x="30" y="363" width="315" height="188"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="57a-wU-OfI">
+                                <rect key="frame" x="30" y="361" width="315" height="206"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.85858124494552612" green="0.92186266183853149" blue="0.77962523698806763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

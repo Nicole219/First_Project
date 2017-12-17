@@ -18,19 +18,38 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tableView: UITableView!
    @IBAction func onSignOutTapped(_ sender: Any) {
        do {
+           deleteAll()
            try Auth.auth().signOut()
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "UIViewController-O65-dF-qbc") as UIViewController
-        self.present(vc, animated: true, completion: nil)
-        } catch {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "UIViewController-O65-dF-qbc") as UIViewController
+            self.present(vc, animated: true, completion: nil)
+        }
+       catch {
             print(error)
         }
     DataService().keyChain.delete("uid")
     
     }
     
-    
+    func deleteAll(){
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let amountOfTasks = (tasks.count) - 1
+        print(tasks.count)
+       if amountOfTasks != -1 {
+        for i in 0...amountOfTasks{
+            let task = tasks[i]
+            context.delete(task)}
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            do{
+                tasks=try context.fetch(Task.fetchRequest())
+            }
+            catch{
+                print("fetch fail");
+        }}
+            tableView.reloadData()
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +72,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = UITableViewCell()
         let task = tasks[indexPath.row]
         cell.textLabel?.text = task.name!
+        //print(indexPath.row)
         return cell
     }
     override func didReceiveMemoryWarning() {
