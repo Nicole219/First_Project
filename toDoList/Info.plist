@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Let me use your photo, please!</string>
+	<string>Let me use photo!</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Let me use camera!</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

@@ -27,13 +27,31 @@ class AddTaskViewController: UIViewController, UINavigationControllerDelegate, U
     
     @IBOutlet weak var imageView: UIImageView!
     @IBAction func addImageView(_ sender: Any) {
+        
         let image = UIImagePickerController()
         image.delegate = self
-        image.sourceType = UIImagePickerControllerSourceType.photoLibrary
-        image.allowsEditing = false
-        self.present(image, animated: true){
+
+        
+        let action = UIAlertController(title: "Выберите фотографию", message: "", preferredStyle: .actionSheet)
+        action.addAction(UIAlertAction(title: "Камера", style: .default, handler:{ (action:UIAlertAction) in
             
-        }
+            if UIImagePickerController.isSourceTypeAvailable(.camera){
+            
+            image.sourceType = UIImagePickerControllerSourceType.camera
+            self.present(image, animated: true, completion: nil)
+            }
+            else{
+                print("Can't use camera")
+            }
+        }))
+        action.addAction(UIAlertAction(title: "Галерея", style: .default, handler:{ (action:UIAlertAction) in
+            image.sourceType = UIImagePickerControllerSourceType.photoLibrary
+            self.present(image, animated: true, completion: nil)
+        }))
+        action.addAction(UIAlertAction(title: "Отменить", style: .default, handler:nil))
+        
+        self.present(action, animated: true, completion: nil)
+        //image.allowsEditing = false
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
